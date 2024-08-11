@@ -22,9 +22,25 @@ int main() {
     int n;
 
     cout<<"ingrese num a invertir: "<<endl;
-    cin>>n;
 
-    inverso(n);
+    try
+    {
+        cin>>n;
+        if (n<0){
+            throw invalid_argument("no se pueden ingresar nros negativos");
+        }
+        else{
+            cout<<"nro original: "<<n<<"\n";
+            cout<<"nro invertido: ";
+            inverso(n);
+
+        }
+    }
+    catch(const std::invalid_argument& e)
+    {
+        cout<<"Error: " << e.what() << "\n";
+    }
+    
 
 
     return 0;
