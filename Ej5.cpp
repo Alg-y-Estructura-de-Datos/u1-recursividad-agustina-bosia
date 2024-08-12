@@ -35,7 +35,5 @@ int main(){
     else{
         cout<<"el dígito ingresado NO existe en el número \n";
     }
-
-
     return 0;
 }

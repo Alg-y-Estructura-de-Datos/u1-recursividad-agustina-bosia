@@ -31,7 +31,7 @@ int main(){
     
     int arreglo[tama];
 
-    for (int i=0; i<tama;i++){
+    for (int i=0; i<tama-1;i++){
         cout<<"ingrese el elemento "<<i+1<<" del arreglo: \n";
         cin>>arreglo[i];
     }

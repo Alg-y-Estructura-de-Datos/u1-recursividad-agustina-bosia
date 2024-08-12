@@ -10,7 +10,7 @@ Implementar una función recursiva que dado un número entero lo muestre de form
  */
 
 void inverso(int num) {
-    if (num < 10) {
+    if (num/10==0) {
         cout << num;
     } else {
         cout << num % 10;

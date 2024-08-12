@@ -12,8 +12,11 @@ int numnat(int num){
         cout<<num<<" = ";
         return 1;
     }
+    else if(num==0){
+        return 0;
+    }
     else{
-        cout <<num<<"+";
+        cout <<num<<" + ";
         return num + numnat(num-1);
     }
     
@@ -21,10 +24,10 @@ int numnat(int num){
 
 int main() {
 
-    int n;
+    unsigned int n;
     cout<<"elija un nro natural: ";
     cin>>n;
 
-    cout << numnat(n);
+    cout << numnat( n);
     return 0;
 }

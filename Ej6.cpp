@@ -22,10 +22,18 @@ int contarDigitosParesImpares(int n){
         }
     }
 }
+
 int main(){
-    int n;
+    int n,d;
     cout << "Ingrese un numero entero positivo: ";
     cin >> n;
-    cout << "El numero de digitos pares en posiciones impares es: " << contarDigitosParesImpares(n) << endl;
+    cout << "Ingrese cantidad de digitos en este: ";
+    cin >> d;
+    if (d%2==0){  
+    cout << "El numero de digitos pares en posiciones impares es: " << contarDigitosParesImpares(n/10) << endl; 
+    }
+    else{
+        cout << "El numero de digitos pares en posiciones impares es: " << contarDigitosParesImpares(n) << endl;
+    }
     return 0;
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 /*
 Ejercicio N°8:
@@ -16,5 +17,8 @@ En ambos casos, mida la cantidad de llamadas recursivas y de iteraciones e impri
 
 
 int main(){
+
+
+    vector <string> array ={"auto", "clara", "beta", "alfarreria"};
     
 }
