@@ -14,7 +14,7 @@ int contarDigitosParesImpares(int n){
         return 0;
     }
     else{
-        if ((n%10)%2==0){
+        if ((n)%2==0){
             return 1 + contarDigitosParesImpares(n/100);
         }
         else{

@@ -1,10 +1,12 @@
 #include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 /*
 Ejercicio N°7: Búsqueda de una Clase en el Horario Escolar.
 Eres un estudiante que necesita encontrar el horario de una clase específica en tu horario semanal
- de clases. Estás interesado en comparar dos tipos de búsquedas, la secuencial y la binaria.
- Usando recursividad, implementa el código en lenguaje C++. Se puede usar la librería String.
+de clases. Estás interesado en comparar dos tipos de búsquedas, la secuencial y la binaria.
+Usando recursividad, implementa el código en lenguaje C++. Se puede usar la librería String.
 
 Búsqueda Secuencial Recursiva:
 
@@ -29,6 +31,49 @@ El programa debe impedir que se ingrese una lista desordenada para la búsqueda 
  Pedile al usuario que ingrese en orden alfabético y que el programa verifique que así sea.
 */
 
-int main(){
+string securecu(vector <string> clases, vector <string> horarios,string search, int i, int& count){
     
+    if (i==clases.size()){
+        if(clases[i]==search){
+            return horarios[i];
+        }
+        else{
+            return "no hay clases con ese nombre";
+        }
+    }
+    else{
+        if(clases[i]==search){
+            return horarios[i];
+        }
+        else{
+            count++;
+            return securecu(clases,horarios,search,i+1,count);
+        }
+    }
+}
+
+int main()
+{
+    int numc,in,count=0;
+    in=0;
+    string search;
+
+    cout<<"ingrese el número de clses q tiene en su horario: \n";
+    cin>>numc;
+
+    vector <string> clases(numc);
+    vector <string> horarios(numc);
+
+    for (int i=0; i<numc; i++){
+        cout<<"cargue el nombre de la clase nro "<<i+1 <<": \n";
+        cin>>clases[i];
+        cout<<"cargue el horario de la clase nro "<<i+1 <<": \n";
+        cin>>horarios[i];
+    }
+
+    cout<<"ingrese el nombre de la clase q está buscando: \n";
+    cin>>search;
+    
+
+    cout<<securecu(clases,horarios,search,in,count)<<"\n"<<count;
 }
