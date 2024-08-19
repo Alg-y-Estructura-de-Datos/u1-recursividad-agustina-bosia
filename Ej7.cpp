@@ -52,6 +52,15 @@ string securecu(vector <string> clases, vector <string> horarios,string search, 
     }
 }
 
+bool estaOrdenado(vector <string>clases, int numc){
+    for (int i=1;i<numc;i++){
+        if(clases[i]<clases[i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
 int main()
 {
     int numc,in,count=0;
@@ -69,6 +78,10 @@ int main()
         cin>>clases[i];
         cout<<"cargue el horario de la clase nro "<<i+1 <<": \n";
         cin>>horarios[i];
+    }
+
+    if(estaOrdenado(clases,numc)){
+        cout<<"las clases están ordenadas \n";
     }
 
     cout<<"ingrese el nombre de la clase q está buscando: \n";
